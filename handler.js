@@ -35,14 +35,14 @@ module.exports = {
                 let user = global.db.data.users[m.sender]
                 if (typeof user !== 'object') global.db.data.users[m.sender] = {}
                 if (user) {
-                    if (!isNumber(user.joincount)) user.joincount = 1
-                    if (!isNumber(user.healt)) user.healt = 0
+                    if (!isNumber(user.joincount)) user.joincount = 100
+                    if (!isNumber(user.healt)) user.healt = 1
                     if (!isNumber(user.level)) user.level = 1
-                    if (!isNumber(user.exp)) user.exp = 0
-                    if (!isNumber(user.limit)) user.limit = 10
+                    if (!isNumber(user.exp)) user.exp = 100
+                    if (!isNumber(user.limit)) user.limit = 1000
                     if (!isNumber(user.lastseen)) user.lastseen = 0
                     if (!isNumber(user.usebot)) user.usebot = 0
-                    if (!isNumber(user.lastclaim)) user.lastclaim = 0
+                    if (!isNumber(user.lastclaim)) user.lastclaim = 
                     if (!isNumber(user.lastclaim2)) user.lastclaim2 = 0  
                     if (!isNumber(user.lastngojek)) user.lastngojek = 0
                     if (!isNumber(user.lastnebang)) user.lastnebang = 0
@@ -111,7 +111,7 @@ module.exports = {
                     if (!isNumber(user.regTime)) user.regTime = -1
                     }
                     if (!('premium' in user)) user.premium = false
-                    if (!isNumber(user.premiumTime)) user.premiumTime = 0
+                    if (!isNumber(user.premiumTime)) user.premiumTime = 1000
                     if (!user.role) user.role = ''
                     if (!('autolevelup' in user)) user.autolevelup = false
                     if (!isNumber(user.pc)) user.pc = 0
@@ -142,11 +142,11 @@ module.exports = {
                     if (!('kuli' in user)) user.kuli = false
                     if (!('polisi' in user)) user.polisi = false
                 } else global.db.data.users[m.sender] = {
-                    joincount: 1,
+                    joincount: 1000,
                     healt: 100,
                     level: 1,
                     exp: 0,
-                    limit: 10,
+                    limit: 1000,
                     lastseen: 0,
                     usebot: 0,
                     lastclaim: 0,
@@ -254,10 +254,10 @@ module.exports = {
                     if (!('isBanned' in chat)) chat.isBanned = false
                     if (!('welcome' in chat)) chat.welcome = true
                     if (!('detect' in chat)) chat.detect = true
-                    if (!('sWelcome' in chat)) chat.sWelcome = ''
-                    if (!('sBye' in chat)) chat.sBye = ''
-                    if (!('sPromote' in chat)) chat.sPromote = ''
-                    if (!('sDemote' in chat)) chat.sDemote = ''
+                    if (!('sWelcome' in chat)) chat.sWelcome = 'halo selamat datang'
+                    if (!('sBye' in chat)) chat.sBye = 'selamat tinggal,jangan gamon ya'
+                    if (!('sPromote' in chat)) chat.sPromote = 'cie naik pangkat,traktir dong'
+                    if (!('sDemote' in chat)) chat.sDemote = 'aduh kasihan pangkatnya Di turunin'
                     if (!('desc' in chat)) chat.desc = true
                     if (!('descUpdate' in chat)) chat.descUpdate = true
                     if (!('stiker' in chat)) chat.stiker = false
@@ -280,15 +280,15 @@ module.exports = {
                     isBanned: false,
                     welcome: true,
                     detect: true,
-                    sWelcome: '',
-                    sBye: '',
-                    sPromote: '',
-                    sDemote: '',
+                    sWelcome: 'halo selamat datang',
+                    sBye: 'selamat tinggal,jangan gamon ya',
+                    sPromote: 'cie naik pangkat,traktir dong',
+                    sDemote: 'aduh kasihan pangkatnya Di turunin',
                     desc: true,
                     descUpdate: true,
                     stiker: false,
                     delete: false,
-                    antiLink: true,
+                    antiLink: false,
                     expired: 0,
                     antiBadword: true,
                     antispam: true,
